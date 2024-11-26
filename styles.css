@@ -1,0 +1,154 @@
+:root {
+    --text-color: #FFFFFF;
+    --card-front-color: #C9C5EA;
+    --card-back-color: #F7F7F7;
+    --button-bg-color: #FFC5C5;
+    --button-text-color: #FFFFFF;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #FFC5C5 0%, #FFD7D7 50%, #FF99CC 100%);
+    font-family: Bai Jamjuree;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  #container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4rem;
+    gap: 3rem;
+  }
+  
+  .cartao {
+    margin: 1rem 1rem;
+    height: 20rem;
+    flex-grow: 1;
+    flex-basis: calc(33% - 6rem);
+  }
+  
+  .cartao__conteudo {
+    background-color: var(--card-front-color);
+    text-align: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
+  }
+  
+  .cartao__conteudo h3 {
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    text-align: left;
+    padding: 0.5rem;
+    position: absolute;
+    margin: 0.6rem;
+    border-radius: 0.6rem;
+    font-size: 1vw;
+    backface-visibility: hidden;
+  }
+  
+  .cartao__conteudo p {
+    margin-top: 1rem;
+    padding: 2rem;
+    margin-top: 4rem;
+    font-size: 1.4vw;
+  }
+  
+  .cartao_conteudo_pergunta p {
+    color: var(--text-color);
+    font-weight: 500;
+  }
+  
+  .cartao_conteudo_resposta p {
+    color: var(--button-bg-color);
+    font-weight: 700;
+  }
+  
+  .cartao.active .cartao__conteudo {
+    transform: rotateY(180deg);
+  }
+  
+  .cartao_conteudo_pergunta, .cartao_conteudo_resposta {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .cartao_conteudo_resposta {
+    transform: rotateY(180deg);
+    background-color: rgba(229, 9, 20, 0.1);
+    border: 4px solid var(--button-bg-color);
+  }
+  
+  footer {
+    background-color: #141414;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+  }
+  
+  footer p {
+    text-align: center;
+    font-size: 0.6rem;
+    margin-top: 0.5rem;
+  }
+  
+  #inicio-estudos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #C9C5EA;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #inicio-estudos h1 {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+  }
+  
+  #inicio-estudos button {
+    background-color: #C9C5EA;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #inicio-estudos button:hover {
+    background-color: #FFC5C5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+  }
+  
+  #iniciar-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  @media (max-width: 560px) {
+    body {
+      background: linear-gradient(135deg, #FFC5C5 0%, #FFD7D7 50%, #FF99CC 100%);
+    }
+    .cartao {
+      flex: 1 0 calc(100% - 1rem);
+    }
+    .cartao__conteudo h3 {
+      font-size: 3vw;
+    }
+}
